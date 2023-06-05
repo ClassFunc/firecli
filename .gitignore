@@ -23,4 +23,4 @@ go.work
 
 classfunc-examples-sa-key.json
 .idea/
-tmp/
+tmp/!/example/YOUR_SERVICE_ACCOUNT_KEY.json
