@@ -17,11 +17,7 @@ import (
 
 func main() {
 
-    firecli.New(
-    "PROJECT_ID",
-    "SERVICE_ACCOUNT_FILE_PATH",
-    )
-    // or more simpler
+    // init firebase client
     firecli.WithCredentialsFile("SERVICE_ACCOUNT_FILE_PATH")
     
     // then you can use
