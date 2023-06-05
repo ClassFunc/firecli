@@ -1,4 +1,4 @@
-package admin_client
+package firecli
 
 import (
 	"context"

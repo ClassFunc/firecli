@@ -1,4 +1,4 @@
-package admin_client
+package firecli
 
 import (
 	cloudStorage "cloud.google.com/go/storage"
