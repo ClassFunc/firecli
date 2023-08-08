@@ -5,9 +5,11 @@ import (
 	"github.com/classfunc/firecli"
 )
 
-const serviceAccountFilePath = "./YOUR_SERVICE_ACCOUNT_KEY.json"
+const serviceAccountFilePath = "/path/to/YOUR_SERVICE_ACCOUNT_KEY.json"
 
 func main() {
+
+	// Initialize the firebase app
 	firecli.WithCredentialsFile(serviceAccountFilePath)
 	fmt.Println(
 		firecli.App,
@@ -17,6 +19,7 @@ func main() {
 		firecli.DefaultBucket,
 	)
 
+	// Options
 	firecli.EnvCollPrefix = "GO_COL_"
 	fmt.Println(firecli.CollPathFromEnv("GO_COL_USERS"))
 
