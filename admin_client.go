@@ -1,6 +1,7 @@
 package firecli
 
 import (
+	"log"
 	"sync"
 )
 
@@ -16,30 +17,30 @@ func New(projectId, serviceAccountFilePath string) {
 
 	// App
 	if App == nil {
-		panic("App is nil")
+		log.Fatal("App is nil")
 	}
 
 	// Auth
 	Auth, err = GetAuth()
 	if err != nil {
-		panic(err)
+		log.Fatal(err)
 	}
 
 	// Firestore, DB
 	Firestore, err = GetFirestoreClient()
 	if err != nil {
-		panic(err)
+		log.Fatal(err)
 	}
 	DB = Firestore
 
 	// Storage, DefaultBucket
 	Storage, err = GetStorageClient()
 	if err != nil {
-		panic(err)
+		log.Fatal(err)
 	}
 	DefaultBucket, err = Storage.DefaultBucket()
 	if err != nil {
-		panic(err)
+		log.Fatal(err)
 	}
 }
 

@@ -2,6 +2,7 @@ package firecli
 
 import (
 	"encoding/json"
+	"log"
 	"os"
 )
 
@@ -26,12 +27,12 @@ func WithCredentialsFile(filePath string) {
 func MustReadSAFile(path string) *ServiceAccount {
 	file, err := os.Open(path)
 	if err != nil {
-		panic(err)
+		log.Fatal(err)
 	}
 	defer func(file *os.File) {
 		err := file.Close()
 		if err != nil {
-			panic(err)
+			log.Fatal(err)
 		}
 	}(file)
 
@@ -39,7 +40,7 @@ func MustReadSAFile(path string) *ServiceAccount {
 	var serviceAccount ServiceAccount
 	err = decoder.Decode(&serviceAccount)
 	if err != nil {
-		panic(err)
+		log.Fatal(err)
 	}
 	return &serviceAccount
 }
