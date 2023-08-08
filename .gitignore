@@ -21,7 +21,6 @@
 # Go workspace file
 go.work
 
-classfunc-examples-sa-key.json
 .idea/
 /vendor/
 /example/tmp/
