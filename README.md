@@ -52,7 +52,7 @@ func main() {
     firecli.GetSubDoc("users", "123", "roles", "456")
     firecli.GetSubDocData("users", "123", "roles", "456")
 
-	type User struct {
+    type User struct {
         Name string
     }
     var adam = new(User)
